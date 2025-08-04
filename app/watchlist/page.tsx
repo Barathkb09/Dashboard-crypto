@@ -12,7 +12,7 @@ export default function WatchlistPage() {
   const { watchlist, isLoaded } = useWatchlist();
   const [coins, setCoins] = useState<Coin[]>([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<string | undefined>(undefined);
 
   useEffect(() => {
     const fetchWatchlistCoins = async () => {
@@ -22,7 +22,7 @@ export default function WatchlistPage() {
       }
 
       setLoading(true);
-      setError(null);
+      setError(undefined);
 
       try {
         // Fetch all coins and filter by watchlist
