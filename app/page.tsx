@@ -82,7 +82,7 @@ export default function Home() {
 
       <MarketFilters filters={filters} onFiltersChange={setFilters} />
       
-      <MarketTable coins={filteredCoins} loading={loading} error={error} />
+      <MarketTable coins={filteredCoins} loading={loading} error={error ?? undefined} />
 
       {!loading && !error && (
         <div className="flex items-center justify-between">
